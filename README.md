@@ -4,6 +4,8 @@ A chatbot that searches and recommends jobs from a controlled knowledge base usi
 hybrid structured + vector retrieval, transparent ranking, and grounded answers from
 **Google Gemini** (`gemini-flash-latest` through Gemini's OpenAI-compatible API) with `gemini-embedding-001` embeddings.
 
+🎬 **Demo video:** [docs/media/Job-Search-Assistant-Showcase.mp4](docs/media/Job-Search-Assistant-Showcase.mp4) — a 2.5-minute walkthrough of the features and tech stack.
+
 > "I'm a Java developer with 4 years of experience. Find me remote jobs in India with Spring Boot and AWS and salary above ₹10 LPA."
 
 It is a **conversational tool-calling agent** with a ChatGPT-style UI. You chat with it normally: "hi", "how are you" or
