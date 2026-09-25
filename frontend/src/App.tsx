@@ -413,7 +413,7 @@ export default function App() {
             <section className="chat-column" aria-label="Chat">
               <ChatWindow
                 messages={chat.messages}
-                loading={chat.loading}
+                loading={chat.loading || chat.comparing}
                 loadingHistory={chat.loadingHistory}
                 onSend={handleSend}
                 onRetry={chat.retry}
@@ -426,6 +426,7 @@ export default function App() {
                       <span>
                         <strong>{selectedJobs.length}</strong> selected
                         <span className="compare-ids"> · {selectedJobs.map((id) => `#${id}`).join(', ')}</span>
+                        {selectedJobs.length < 2 && <span className="compare-hint"> — select 1 more job to compare</span>}
                       </span>
                       <div>
                         <button

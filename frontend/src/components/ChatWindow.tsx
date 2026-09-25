@@ -78,7 +78,14 @@ export function ChatWindow({ messages, loading, loadingHistory = false, onSend, 
   // Follow new messages unless the user scrolled up to read; always follow their own message.
   const last = messages[messages.length - 1];
   useLayoutEffect(() => {
-    if (nearBottom.current || last?.kind === 'user') {
+    if (last?.kind === 'comparison') {
+      // The user asked for this from a card higher up: bring the new table into view from its top.
+      const tables = scroller.current?.querySelectorAll('.comparison');
+      tables?.[tables.length - 1]?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      return;
+    }
+    // Follow new content when already at the bottom, after the user sends, or when an action they started begins.
+    if (nearBottom.current || last?.kind === 'user' || loading) {
       endRef.current?.scrollIntoView({ behavior: messages.length > 1 ? 'smooth' : 'auto', block: 'end' });
     }
   }, [messages.length, loading, last?.kind]);

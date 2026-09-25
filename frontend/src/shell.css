@@ -1028,3 +1028,13 @@ h3 {
     scroll-behavior: auto !important;
   }
 }
+
+.compare-hint {
+  color: var(--muted);
+  font-size: 13px;
+}
+@media (max-width: 640px) {
+  .compare-hint {
+    display: none;
+  }
+}

@@ -327,6 +327,7 @@ export function useChat() {
       const comparison = await api.compare(selectedJobs);
       rememberJobs(comparison.jobs);
       setMessages((m) => [...m, { kind: 'comparison', id: nextId('c'), comparison }]);
+      setSelectedJobs([]);
     } catch (err) {
       const msg = errorMessage(err);
       setError(msg);
