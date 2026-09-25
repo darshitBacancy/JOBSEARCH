@@ -1,0 +1,25 @@
+# --- secrets -------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.key
+
+# --- backend -------------------------------------------------------------
+backend/target/
+# local H2 database + in-memory vector store snapshot (regenerated automatically)
+backend/db/
+*.log
+
+# --- frontend ------------------------------------------------------------
+frontend/node_modules/
+frontend/dist/
+node_modules/
+
+# --- tooling / OS --------------------------------------------------------
+.idea/
+*.iml
+.vscode/
+.DS_Store
+Thumbs.db
+data/tools/node_modules/
+
